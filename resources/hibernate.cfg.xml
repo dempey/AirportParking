@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+                                         "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+
+	<session-factory name="parking">
+		<mapping class="com.stgutah.model.Amount"/>
+		<mapping class="com.stgutah.model.AmountType"/>
+		<mapping class="com.stgutah.model.Email"/>
+		<mapping class="com.stgutah.model.EmailType"/>
+		<mapping class="com.stgutah.model.ParkingLot" />
+		<mapping class="com.stgutah.model.State" />
+		<mapping class="com.stgutah.model.ParkingSlot" />
+		<mapping class="com.stgutah.model.Phone" />
+		<mapping class="com.stgutah.model.PhoneType" />
+		<mapping class="com.stgutah.model.Reservation" />
+		<mapping class="com.stgutah.model.User" />
+		<mapping class="com.stgutah.model.UserType" />
+		<mapping class="com.stgutah.model.Vehicle" />
+		<mapping class="com.stgutah.model.Language" />
+	</session-factory>
+
+</hibernate-configuration>
