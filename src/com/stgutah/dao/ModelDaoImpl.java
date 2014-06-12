@@ -199,6 +199,20 @@ public class ModelDaoImpl
 
 		return reservations;
 	}
+	
+	@SuppressWarnings("unchecked")
+	public List<Reservation> getReservationsByVehicleId(Vehicle vehicle)
+	{
+		Session session = sessionFactory.openSession();
+		
+		String queryString = "from Reservation r where r.vehicle.vehicleId = :vehicleId";
+		Query queryObject = session.createQuery(queryString);
+		queryObject.setInteger("vehicleId", vehicle.getVehicleId());
+		queryObject.setCacheable(true);
+		List<Reservation> reservations = (List<Reservation>)queryObject.list();
+		
+		return reservations;
+	}
 
 	@SuppressWarnings("unchecked")
 	public List<Reservation> getReservationsByDateRange(Date fromDate, Date toDate)
@@ -233,7 +247,19 @@ public class ModelDaoImpl
 		session.delete(reservation);
 		session.flush();
 	}
+	
+	public void deleteReservations(List<Reservation> reservations)
+	{
+		Session session = sessionFactory.openSession();
 
+		for(Reservation reservation : reservations) 
+		{
+			session.delete(reservation);	
+		}
+		
+		session.flush();
+	}
+	
 	@SuppressWarnings("unchecked")
 	public List<State> getStates()
 	{

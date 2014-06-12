@@ -7,7 +7,7 @@
 
 		<link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/css/demo_table.css" />
 
-		<script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-1.7.2.js"></script>
+		<script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-2.0.0.js"></script>
 		<script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery.dataTables.min.js"></script>
 		<script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery.jeditable.js"></script>
 		<script type="text/javascript">
@@ -54,7 +54,9 @@
 						type: "POST",
 						data: "make="+anSelected[0].cells[0].innerHTML+"&model="+anSelected[0].cells[1].innerHTML+"&plateNumber="+anSelected[0].cells[3].innerHTML,
 						success: function(userList)
-						{}
+						{
+							console.log('I reached the success callback after vehicle deletion');
+						}
 					});
 					oTable.fnDeleteRow( anSelected[0] );
 				});

@@ -39,7 +39,7 @@ public class ManageVehicleController
 		return vehicles;
 	}
 	
-	@RequestMapping(value = "/deletevehicle", method = RequestMethod.POST)
+	@RequestMapping(value="/deletevehicle", method = RequestMethod.POST)
 	public void deleteSelectedVehicle(HttpServletRequest request, ModelMap model)
 	{
 		String carMake = request.getParameter("make");

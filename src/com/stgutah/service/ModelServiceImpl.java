@@ -397,6 +397,15 @@ public class ModelServiceImpl {
 	@Transactional
 	public void deleteVehicleByMakeModelPlate(String plateNumber) {
 		Vehicle vehicle = modelDao.getVehicleByTag(plateNumber);
+		
+		// Because there is a foreign key from reservation(s) to vehicle, we have to first
+		// delete any reservations for this vehicle to avoid violating the foreign key constraint
+		List<Reservation> reservations = modelDao.getReservationsByVehicleId(vehicle);
+		if(reservations.size() > 0)
+		{
+			modelDao.deleteReservations(reservations);
+		}
+		
 		modelDao.deleteVehicle(vehicle);
 	}
 
