@@ -1,0 +1,92 @@
+*
+{
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+a
+{
+	text-decoration: none;
+}
+
+tr.reservationInfo
+{
+	height: 30px;
+}
+
+table.reservationCharges
+{
+	width: 170%;
+	padding-left: 20px;
+	padding-top: 50px;
+	padding-bottom: 50px;
+	background-color: #CCFF99;
+}
+
+div.parkingTitle
+{
+	width: 100%;
+	height: 80px;
+	color: white;
+	background-color: #000099;
+}
+
+td.titleTop
+{
+	font-size: 21pt;
+	height: 44px;
+	vertical-align: bottom;
+	padding-left: 25px;
+}
+
+td.titleBottom
+{
+	height: 38px;
+	vertical-align: top;
+	letter-spacing: 3px;
+	padding-left: 25px;
+}
+
+div.parkingHeader
+{
+	width: 100%;
+	background-color: #D0D0D0;
+	height: 28px;
+}
+
+div#sub-header
+{
+	padding-left: 25px;
+	padding-top: 25px;
+	font-size: 21pt;
+}
+
+div#main-form
+{
+	padding-left: 25px;
+	padding-top: 25px;
+}
+
+tr.parkingHeaderRows
+{
+	height: 28px;
+	vertical-align: bottom;
+}
+
+a.parkingHeaderLinks
+{
+	color: #FFFFFF;
+	background-color: #D0D0D0;
+	padding-left: 25px;
+	text-decoration: none;
+}
+
+.languageSelector
+{
+	padding-left: 25px;
+	padding-top: 10px;
+}
+
+.languageSelectorCellPad
+{
+	padding-left: 25px;
+}
