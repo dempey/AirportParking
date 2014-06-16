@@ -8,8 +8,6 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-import org.hibernate.annotations.ForeignKey;
-
 @Entity
 @Table(name = "PARKING_LOT")
 public class ParkingLot
@@ -30,7 +28,6 @@ public class ParkingLot
 	
 	@ManyToOne
 	@JoinColumn(name = "STATE_ID", insertable = true, updatable = true, nullable = false, referencedColumnName = "STATE_ID")
-	@ForeignKey(name = "PARKING_LOT_STATE_FK")
 	private State state; //FK reference to STATE table
 	
 	@Column(name = "ZIP_CODE")
@@ -38,17 +35,14 @@ public class ParkingLot
 	
 	@ManyToOne
 	@JoinColumn(name = "PRIMARY_PHONE_ID", insertable = true, updatable = true, referencedColumnName = "PHONE_ID")
-	@ForeignKey(name = "PARKING_LOT_PRIMARY_PHONE_FK")
 	private Phone primaryPhone; //FK reference to PHONE table
 	
 	@ManyToOne
 	@JoinColumn(name = "SECONDARY_PHONE_ID", insertable = true, updatable = true, referencedColumnName = "PHONE_ID")
-	@ForeignKey(name = "PARKING_LOT_SECONDARY_PHONE_FK")
 	private Phone secondaryPhone; //FK reference to PHONE table
 	
 	@ManyToOne
-	@JoinColumn(name = "EMAIL_ID")
-	@ForeignKey(name = "PARKING_LOT_EMAIL_FK")
+	@JoinColumn(name = "EMAIL_ID", referencedColumnName="EMAIL_ID")
 	private Email email; //FK reference to EMAIL table
 
 	public Integer getParkingLotId()

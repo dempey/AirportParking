@@ -8,8 +8,6 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-import org.hibernate.annotations.ForeignKey;
-
 @Entity
 @Table(name = "PHONE")
 public class Phone
@@ -23,8 +21,7 @@ public class Phone
 	private String phoneNumber;
 	
 	@ManyToOne
-	@JoinColumn(name = "PHONE_TYPE_ID", nullable = false)
-	@ForeignKey(name = "PHONE_TYPE_FK")
+	@JoinColumn(name = "PHONE_TYPE_ID", nullable = false, referencedColumnName="PHONE_TYPE_ID")
 	private PhoneType phoneType;
 	
 	@Column(name = "ACCEPTS_TEXT")

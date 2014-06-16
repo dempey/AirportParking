@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.SessionAttributes;
-import org.springframework.web.servlet.ModelAndView;
+//import org.springframework.web.servlet.ModelAndView;
 
 import com.stgutah.form.NewUserForm;
 import com.stgutah.model.State;
@@ -67,11 +67,10 @@ public class NewUserController
 		// This will resolve to /WEB-INF/jsp/newuserpage.jsp
 		
 		return "newuser";
-//		return "newuser";
 	}
 	
 	@RequestMapping(value = "/submitnewuser", method = RequestMethod.POST)
-	public ModelAndView submitNewUserInformation(@ModelAttribute("newUserForm") NewUserForm newUserForm, BindingResult result, HttpServletRequest request, ModelMap model)
+	public String /*ModelAndView*/ submitNewUserInformation(@ModelAttribute("newUserForm") NewUserForm newUserForm, BindingResult result, HttpServletRequest request, ModelMap model)
 //	public String submitNewUserInformation(@Valid @ModelAttribute("newUserForm") NewUserForm newUserForm, BindingResult result, HttpServletRequest request, ModelMap model)
 	{
 		logger.debug("New username is: " + newUserForm.getUsername());
@@ -90,11 +89,13 @@ public class NewUserController
 			model.addAttribute("newuser", newUserForm);
 			//The username already exists so add an error message to model and return to newuser.jsp
 			model.put("error", "User name '" + submittedUsername + "' is already in use.");
-			return new ModelAndView("newuser");
+			//return new ModelAndView("newuser");
+			return "newuser";
 		}
 		
 		modelService.addNewUser(newUserForm);
 		
-		return new ModelAndView("loginpage");
+		//return new ModelAndView("loginpage");
+		return "loginpage";
 	}
 }

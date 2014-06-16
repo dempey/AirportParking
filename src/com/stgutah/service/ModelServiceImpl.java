@@ -55,22 +55,12 @@ public class ModelServiceImpl {
 
 		// Do all database selects first
 		State state = modelDao.getStateByCode(newUserForm.getState());
+		// TODO replace with content from dropdown selection
 		EmailType emailType = modelDao
-				.getEmailTypeByDescription(EmailTypeEnum.PERSONAL.toString()); // TODO
-																				// replace
-																				// with
-																				// content
-																				// from
-																				// dropdown
-																				// selection
+				.getEmailTypeByDescription(EmailTypeEnum.PERSONAL.toString()); 
+		// TODO replace with content from dropdown selection
 		PhoneType phoneType = modelDao
-				.getPhoneTypeByDescription(EmailTypeEnum.PERSONAL.toString()); // TODO
-																				// replace
-																				// with
-																				// content
-																				// from
-																				// dropdown
-																				// selection
+				.getPhoneTypeByDescription(EmailTypeEnum.PERSONAL.toString());
 		// By default all new users get a type of 'CUSTOMER'
 		UserType userType = modelDao
 				.getUserTypeByDescription(UserTypeEnum.CUSTOMER.toString());

@@ -30,9 +30,6 @@
 				<tr>
 					<td><a href="${pageContext.request.contextPath}/reservationmanage/managereservations.html">Manage your reservations</a></td>
 				</tr>
-				<tr>
-					<td><a href="${pageContext.request.contextPath}/language/languagepage.html">Language</a></td>
-				</tr>
 			</table>
 		</div>
 

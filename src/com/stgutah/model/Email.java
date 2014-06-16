@@ -8,8 +8,6 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-import org.hibernate.annotations.ForeignKey;
-
 @Entity
 @Table(name = "EMAIL")
 public class Email
@@ -23,8 +21,7 @@ public class Email
 	private String emailAddress;
 	
 	@ManyToOne
-	@JoinColumn(name = "EMAIL_TYPE_ID", nullable = false)
-	@ForeignKey(name = "EMAIL_TYPE_FK")
+	@JoinColumn(name = "EMAIL_TYPE_ID", nullable = false, referencedColumnName="EMAIL_TYPE_ID")
 	private EmailType emailType;
 	
 	public Email()

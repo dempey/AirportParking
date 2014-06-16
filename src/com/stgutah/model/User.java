@@ -12,7 +12,6 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.DynamicUpdate;
-import org.hibernate.annotations.ForeignKey;
 import org.hibernate.annotations.SelectBeforeUpdate;
 
 @Entity
@@ -42,8 +41,7 @@ public class User
 	private String city;
 	
 	@ManyToOne
-	@JoinColumn(name = "STATE_ID",  insertable= true, updatable = false, nullable = false)
-	@ForeignKey(name = "USER_STATE_FK")
+	@JoinColumn(name = "STATE_ID",  insertable= true, updatable = false, nullable = false, referencedColumnName="STATE_ID")
 	private State state;
 	
 	@Column(name = "ZIP_CODE")
@@ -56,28 +54,23 @@ public class User
 	private String passwordMd5;
 	
 	@ManyToOne(cascade=CascadeType.REFRESH)
-	@JoinColumn(name = "USER_TYPE_ID", insertable= true, updatable = false, nullable = false)
-	@ForeignKey(name = "USER_TYPE_FK")
+	@JoinColumn(name = "USER_TYPE_ID", insertable= true, updatable = false, nullable = false, referencedColumnName="USER_TYPE_ID")
 	private UserType userType;
 	
 	@ManyToOne
 	@JoinColumn(name = "PRIMARY_PHONE_ID", insertable= true, updatable = true, referencedColumnName = "PHONE_ID")
-	@ForeignKey(name = "USER_PRIMARY_PHONE_FK")
 	private Phone primaryPhone;
 	
 	@ManyToOne
 	@JoinColumn(name = "SECONDARY_PHONE_ID", insertable= true, updatable = true, referencedColumnName = "PHONE_ID")
-	@ForeignKey(name = "USER_SECONDARY_PHONE_FK")
 	private Phone secondaryPhone;
 	
 	@ManyToOne
 	@JoinColumn(name = "PRIMARY_EMAIL_ID", insertable= true, updatable = true, referencedColumnName = "EMAIL_ID")
-	@ForeignKey(name = "USER_PRIMARY_EMAIL_FK")
 	private Email primaryEmail;
 	
 	@ManyToOne
 	@JoinColumn(name = "SECONDARY_EMAIL_ID", insertable= true, updatable = true, referencedColumnName = "EMAIL_ID")
-	@ForeignKey(name = "USER_SECONDARY_EMAIL_FK")
 	private Email secondaryEmail;
 	
 	@Column(name = "DATE_CREATED", nullable = false)

@@ -8,8 +8,6 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-import org.hibernate.annotations.ForeignKey;
-
 @Entity
 @Table(name = "AMOUNT")
 public class Amount
@@ -20,13 +18,11 @@ public class Amount
 	private Integer amountId;
 	
 	@ManyToOne
-	@JoinColumn(name = "AMOUNT_TYPE_ID", nullable = false)
-	@ForeignKey(name = "AMOUNT_TYPE_FK")
+	@JoinColumn(name = "AMOUNT_TYPE_ID", nullable = false, referencedColumnName="AMOUNT_TYPE_ID")
 	private AmountType amountType;
 	
 	@ManyToOne
-	@JoinColumn(name = "PARKING_LOT_ID", nullable = false)
-	@ForeignKey(name = "AMOUNT_PARKING_LOT_FK")
+	@JoinColumn(name = "PARKING_LOT_ID", nullable = false, referencedColumnName="PARKING_LOT_ID")
 	private ParkingLot parkingLot;
 	
 	@Column(name = "AMOUNT", nullable = false)
