@@ -5,7 +5,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.encoding.Md5PasswordEncoder;
 
 @Configuration
-public class SecurityMD5UtilImpl
+public class SecurityMD5Util
 {
 	private static Logger logger = Logger.getLogger("util");
 

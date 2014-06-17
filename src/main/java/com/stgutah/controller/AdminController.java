@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.stgutah.form.JsonUserTypes;
 import com.stgutah.form.JsonUsers;
 import com.stgutah.model.UserType;
-import com.stgutah.service.ModelServiceImpl;
+import com.stgutah.service.ModelService;
 
 @Controller
 @RequestMapping("/administrator")
@@ -26,7 +26,7 @@ public class AdminController
 	private static Logger logger = Logger.getLogger(AdminController.class);
 	
 	@Autowired
-	private ModelServiceImpl modelService;
+	private ModelService modelService;
 	
 	@RequestMapping(value = "/admin", method = RequestMethod.GET)
 	public String /*ModelAndView*/ getAdminPage()

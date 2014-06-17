@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.stgutah.form.JsonLanguages;
-import com.stgutah.service.ModelServiceImpl;
+import com.stgutah.service.ModelService;
 
 @Controller
 @RequestMapping("/language")
@@ -17,7 +17,7 @@ public class LanguageController
 	private static Logger logger = Logger.getLogger(LanguageController.class);
 
 	@Autowired
-	private ModelServiceImpl modelService;
+	private ModelService modelService;
 
 	@RequestMapping(value = "/languagepage", method = RequestMethod.GET)
 	public String getLanguagePage()

@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.stgutah.form.NewVehicleForm;
-import com.stgutah.service.ModelServiceImpl;
+import com.stgutah.service.ModelService;
 
 @Controller
 @RequestMapping("/vehicle")
@@ -25,7 +25,7 @@ public class AddVehicleController
 	private static Logger logger = Logger.getLogger(AddVehicleController.class);
 	
 	@Autowired
-	private ModelServiceImpl modelService;
+	private ModelService modelService;
 	
 	@RequestMapping(value = "/addvehicle", method = RequestMethod.GET)
 	public String getVehiclePage(ModelMap model)

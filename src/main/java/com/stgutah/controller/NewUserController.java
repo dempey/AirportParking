@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.stgutah.form.NewUserForm;
 import com.stgutah.model.State;
-import com.stgutah.service.ModelServiceImpl;
+import com.stgutah.service.ModelService;
 
 @Controller
 @SessionAttributes
@@ -27,7 +27,7 @@ public class NewUserController
 	protected static Logger logger = Logger.getLogger("controller");
 	
 	@Autowired
-	protected ModelServiceImpl modelService;
+	protected ModelService modelService;
 	
 	@RequestMapping(value = "/newuser", method = RequestMethod.GET)
 	public String getNewUserPage(ModelMap model)

@@ -14,7 +14,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.stgutah.dao.ModelDaoImpl;
+import com.stgutah.dao.ModelDao;
 import com.stgutah.model.User;
 
 /**
@@ -29,7 +29,7 @@ public class CustomUserDetailsService implements UserDetailsService
 	protected static Logger logger = Logger.getLogger(CustomUserDetailsService.class);
 	
 	@Autowired
-	private ModelDaoImpl modelDao;
+	private ModelDao modelDao;
 	
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException, DataAccessException
 	{

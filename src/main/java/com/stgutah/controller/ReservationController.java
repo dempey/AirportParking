@@ -26,14 +26,14 @@ import com.stgutah.model.ParkingLot;
 import com.stgutah.model.Reservation;
 import com.stgutah.model.User;
 import com.stgutah.model.Vehicle;
-import com.stgutah.service.ModelServiceImpl;
+import com.stgutah.service.ModelService;
 
 @Controller
 @RequestMapping("/reservation")
 public class ReservationController
 {
 	@Autowired
-	private ModelServiceImpl modelService;
+	private ModelService modelService;
 	
 	private static Logger logger = Logger.getLogger(ReservationController.class);
 	

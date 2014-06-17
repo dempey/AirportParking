@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.stgutah.form.JsonUserVehicles;
-import com.stgutah.service.ModelServiceImpl;
+import com.stgutah.service.ModelService;
 
 @Controller
 @RequestMapping("/vehiclemanage")
@@ -20,7 +20,7 @@ public class ManageVehicleController
 	private static Logger logger = Logger.getLogger(ManageVehicleController.class);
 	
 	@Autowired
-	private ModelServiceImpl modelService;
+	private ModelService modelService;
 	
 	@RequestMapping(value = "/managevehicles", method = RequestMethod.GET)
 	public String getVehicleManagePage()

@@ -17,7 +17,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.stgutah.dao.ModelDaoImpl;
+import com.stgutah.dao.ModelDao;
 import com.stgutah.form.JsonLanguages;
 import com.stgutah.form.JsonUserReservations;
 import com.stgutah.form.JsonUserVehicles;
@@ -39,15 +39,21 @@ import com.stgutah.model.User;
 import com.stgutah.model.UserType;
 import com.stgutah.model.UserTypeEnum;
 import com.stgutah.model.Vehicle;
-import com.stgutah.util.SecurityMD5UtilImpl;
+import com.stgutah.util.SecurityMD5Util;
 
 @Configuration
-public class ModelServiceImpl {
+public class ModelService {
 	@Autowired
-	private ModelDaoImpl modelDao;
+	private ModelDao modelDao;
+
+	//Added to accomodate mock testing
+	public void setModelDao(ModelDao modelDao)
+	{
+		this.modelDao = modelDao;
+	}
 
 	@Autowired
-	private SecurityMD5UtilImpl securityUtil;
+	private SecurityMD5Util securityUtil;
 
 	@Transactional
 	public void addNewUser(NewUserForm newUserForm) {

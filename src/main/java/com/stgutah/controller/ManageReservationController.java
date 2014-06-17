@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.stgutah.form.JsonUserReservations;
-import com.stgutah.service.ModelServiceImpl;
+import com.stgutah.service.ModelService;
 
 @Controller
 @RequestMapping("/reservationmanage")
@@ -20,7 +20,7 @@ public class ManageReservationController
 	private static Logger logger = Logger.getLogger(ManageReservationController.class);
 	
 	@Autowired
-	private ModelServiceImpl modelService;
+	private ModelService modelService;
 	
 	@RequestMapping(value = "/managereservations", method = RequestMethod.GET)
 	public String getReservationManagePage()

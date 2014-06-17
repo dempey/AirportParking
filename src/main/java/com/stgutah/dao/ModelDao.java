@@ -24,7 +24,7 @@ import com.stgutah.model.UserType;
 import com.stgutah.model.Vehicle;
 
 @Configuration
-public class ModelDaoImpl
+public class ModelDao
 {
 	@Autowired
 	private SessionFactory sessionFactory;
