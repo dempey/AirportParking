@@ -33,6 +33,7 @@ import com.stgutah.model.ParkingLot;
 import com.stgutah.model.ParkingSlot;
 import com.stgutah.model.Phone;
 import com.stgutah.model.PhoneType;
+import com.stgutah.model.PhoneTypeEnum;
 import com.stgutah.model.Reservation;
 import com.stgutah.model.State;
 import com.stgutah.model.User;
@@ -46,7 +47,7 @@ public class ModelService {
 	@Autowired
 	private ModelDao modelDao;
 
-	//Added to accomodate mock testing
+	//Added to accommodate mock testing
 	public void setModelDao(ModelDao modelDao)
 	{
 		this.modelDao = modelDao;
@@ -54,6 +55,13 @@ public class ModelService {
 
 	@Autowired
 	private SecurityMD5Util securityUtil;
+
+	//added to accommodate mock testing
+	public void setSecurityUtil(SecurityMD5Util securityUtil)
+	{
+		this.securityUtil = securityUtil;
+	}
+
 
 	@Transactional
 	public void addNewUser(NewUserForm newUserForm) {
@@ -66,7 +74,7 @@ public class ModelService {
 				.getEmailTypeByDescription(EmailTypeEnum.PERSONAL.toString()); 
 		// TODO replace with content from dropdown selection
 		PhoneType phoneType = modelDao
-				.getPhoneTypeByDescription(EmailTypeEnum.PERSONAL.toString());
+				.getPhoneTypeByDescription(PhoneTypeEnum.PERSONAL.toString());
 		// By default all new users get a type of 'CUSTOMER'
 		UserType userType = modelDao
 				.getUserTypeByDescription(UserTypeEnum.CUSTOMER.toString());
