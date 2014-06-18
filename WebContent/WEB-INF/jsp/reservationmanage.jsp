@@ -7,10 +7,25 @@
 		<title>User Reservation Management</title>
 
 		<link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/css/demo_table.css" />
+	</head>
 
-		<script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-2.0.0.js"></script>
-		<script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery.dataTables.min.js"></script>
-		<script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery.jeditable.js"></script>
+	<body>
+		<%@ include file="commonheader.jsp" %>
+
+		<div id="sub-header">
+			<table>
+				<tr><td>Reservation Management</td></tr>
+			</table>
+		</div>
+
+		<div style="padding-left: 25px; padding-top: 25px">
+			<a href="javascript:void(0)" id="delete">Delete selected row</a>
+		</div>
+
+		<div id="main-form" style="width: 870px">
+			<table id="reservationList" class="display"></table>
+		</div>
+
 		<script type="text/javascript">
 			var oTable;
 
@@ -83,24 +98,6 @@
 			}
 
 		</script>
-	</head>
-
-	<body>
-		<%@ include file="commonheader.jsp" %>
-
-		<div id="sub-header">
-			<table>
-				<tr><td>Reservation Management</td></tr>
-			</table>
-		</div>
-
-		<div style="padding-left: 25px; padding-top: 25px">
-			<a href="javascript:void(0)" id="delete">Delete selected row</a>
-		</div>
-
-		<div id="main-form" style="width: 870px">
-			<table id="reservationList" class="display"></table>
-		</div>
 
 	</body>
 </html>

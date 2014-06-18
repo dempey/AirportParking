@@ -5,17 +5,6 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<title>Reservation Receipt</title>
-		
-		<script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-2.0.0.js"></script>
-		<script type="text/javascript" src="${pageContext.request.contextPath}/js/jshashtable.js"></script>
-		<script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery.numberformatter-1.2.3.min.js"></script>
-		<script type="text/javascript">
-			$(document).ready(function()
-			{
-				$('.dollar').formatNumber({format:"$#,###.00", locale:"us"});
-				$('.percent').formatNumber({format:"#.0%", locale:"us"});
-			});
-		</script>
 	</head>
 	
 	<body>
@@ -93,5 +82,14 @@
 				</tr>
 			</table>
 		</div>
+		
+		<script type="text/javascript">
+			$(document).ready(function()
+			{
+				$('.dollar').formatNumber({format:"$#,###.00", locale:"us"});
+				$('.percent').formatNumber({format:"#.0%", locale:"us"});
+			});
+		</script>
+		
 	</body>
 </html>

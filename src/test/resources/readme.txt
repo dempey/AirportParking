@@ -1,1 +1,1 @@
-User this directory for any resources needed for testing.
+Use this directory for any resources needed for testing.

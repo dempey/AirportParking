@@ -6,11 +6,23 @@
 		<title>User administration</title>
 		
 		<link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/css/demo_table.css" />
+	</head>
+	
+	<body>
+		<%@ include file="commonheader.jsp" %>
+	
+		<div id="sub-header">
+			<table>
+				<tr><td>User administration</td></tr>
+			</table>
+		</div>
+
+		<div id="main-form">
 		
-		<script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-2.0.0.js"></script>
-		<script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery.dataTables.min.js"></script>
-		<script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery.jeditable.js"></script>
-		<script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery.simpletip-1.3.1.min.js"></script>
+			<table id="customerList" class="display"></table>
+		
+		</div>
+
 		<script type="text/javascript">
 			$(document).ready(function()
 			{
@@ -128,22 +140,6 @@
 				
 			});	
 		</script>
-	</head>
-	
-	<body>
-		<%@ include file="commonheader.jsp" %>
-	
-		<div id="sub-header">
-			<table>
-				<tr><td>User administration</td></tr>
-			</table>
-		</div>
-
-		<div id="main-form">
-		
-			<table id="customerList" class="display"></table>
-		
-		</div>
 
 	</body>
 </html>

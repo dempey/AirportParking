@@ -11,26 +11,6 @@
 		<title>Create A Reservation</title>
 	
 		<link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/css/dateRange.css" />
-	
-		<script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-2.0.0.js"></script>
-		<script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery.dateRange.js"></script>
-		
-		<script type="text/javascript">
-			$(document).ready(function()
-			{
-				$('#dateRangePicker').dateRange(
-				{
-					selected: function(dates)
-					{
-						var from = dates[0];
-						var to = dates[1];
-						//do something here like ajax call?
-						$('#fromDate').val(from);
-						$('#toDate').val(to);
-					}
-				});
-			});
-		</script>
 	</head>
 	
 	<body>
@@ -61,6 +41,23 @@
 				</div>
 			</form:form>
 		</div>
+		
+		<script type="text/javascript">
+			$(document).ready(function()
+			{
+				$('#dateRangePicker').dateRange(
+				{
+					selected: function(dates)
+					{
+						var from = dates[0];
+						var to = dates[1];
+						//do something here like ajax call?
+						$('#fromDate').val(from);
+						$('#toDate').val(to);
+					}
+				});
+			});
+		</script>
+		
 	</body>
-	
 </html>

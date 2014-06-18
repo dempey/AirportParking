@@ -8,15 +8,6 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<title>Add A Vehicle</title>
-		
-		<script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-2.0.0.js"></script>
-
-		<script type="text/javascript">
-			$(document).ready(function()
-			{
-				$('#make').focus();
-			});
-		</script>
 	</head>
 	
 	<body>
@@ -61,5 +52,13 @@
 				</table>
 			</form:form>
 		</div>
+		
+		<script type="text/javascript">
+			$(document).ready(function()
+			{
+				$('#make').focus();
+			});
+		</script>
+		
 	</body>
 </html>
