@@ -92,6 +92,7 @@
 			<a href="${pageContext.request.contextPath}/anonymous/newuser.html">Create new account</a>
 		</div>
 		
+		<script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-2.0.0.js"></script>
 		<script type="text/javascript">
 			$(document).ready(function()
 			{
